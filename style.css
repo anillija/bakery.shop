@@ -1,0 +1,348 @@
+body {
+    background-color: lightpink; /* Changed to light pink */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevent scrollbars due to animation */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 135px;
+    background-color: transparent;
+    border: 3px solid darkpink;
+    border-radius: 50% 50% 0 0;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    animation: move-heart 5s infinite ease-in-out;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 10%);
+    background-size: 50px 50px;
+    animation: sparkle-animation 5s infinite linear;
+    z-index: 0;
+}
+
+.beige-heading {
+    color: beige;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 0 10px 5px rgba(255, 192, 203, 0.5), 0 0 20px 10px rgba(255, 182, 193, 0.7);
+}
+
+.pink-heading {
+    color: black; /* Changed text color to black */
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.pink-heart {
+    color: pink;
+    font-size: 1.5em;
+}
+
+.description {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-top: 10px;
+}
+
+.glitter-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: fit-content;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    color: #333;
+    position: relative;
+    background: beige;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(255, 192, 203, 0.5), 0 0 20px 10px rgba(255, 182, 193, 0.7);
+}
+
+.glitter-list li {
+    margin: 5px 0;
+}
+
+.dark-pink-text {
+    color: darkpink;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.login-container {
+    background-color: beige;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px rgba(255, 192, 203, 0.7);
+    text-align: center;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 10%);
+    background-size: 50px 50px;
+    animation: sparkle 3s linear infinite;
+    z-index: 0;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes move-heart {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -150%) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkle-animation {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.moving-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 135px;
+    background-color: transparent;
+    border: 3px solid darkpink;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-45deg);
+    animation: move-heart 5s infinite ease-in-out;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.moving-heart::before,
+.moving-heart::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 135px;
+    background-color: transparent;
+    border: 3px solid darkpink;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.moving-heart::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-field {
+    padding: 10px;
+    border: 2px solid pink;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: hotpink;
+    box-shadow: 0 0 5px hotpink;
+}
+
+.login-button {
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: hotpink;
+}
+
+.heart-outline {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 90px;
+    background-color: transparent;
+    border: 3px solid darkpink;
+    border-radius: 50% 50% 0 0;
+    transform: translateX(-50%) rotate(-45deg);
+    z-index: 2;
+}
+
+.heart-outline::before,
+.heart-outline::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    background-color: transparent;
+    border: 3px solid darkpink;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heart-outline::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: sparkle-animation 3s infinite ease-in-out;
+    z-index: 0;
+}
+
+.bakery-header {
+    background-color: beige; /* Changed to beige */
+    color: darkpink; /* Changed to dark pink */
+    padding: 20px;
+    font-size: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 3px solid beige; /* Beige border */
+    outline: 8px dashed pink; /* Updated to a dashed pink outline */
+    outline-offset: 5px; /* Added spacing between the border and outline */
+    border-radius: 10px; /* Rounded corners for both border and outline */
+    display: inline-block; /* Adjust width to fit the text */
+    margin: 20px auto; /* Center the header */
+}
+
+.bakery-intro {
+    margin: 20px;
+    font-size: 1.2em;
+    color: darkpink; /* Changed to dark pink */
+}
+
+.bakery-products {
+    margin: 20px;
+    border: 3px solid beige; /* Added beige border */
+    outline: 5px solid lightpink; /* Added light pink outline */
+    border-radius: 10px; /* Rounded corners for both border and outline */
+    padding: 15px; /* Added padding for spacing */
+}
+
+.bakery-products h2 {
+    color: darkpink; /* Changed to dark pink */
+    font-size: 1.8em;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Align the list to the left */
+    margin-left: 20px; /* Add some left margin for spacing */
+}
+
+.product-list li {
+    margin: 10px 0;
+    font-size: 1em;
+    color: beige; /* Changed to beige */
+}
+
+.bakery-footer {
+    background-color: beige; /* Changed to beige */
+    color: darkpink; /* Changed to dark pink */
+    padding: 10px;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bakery-map {
+    margin: 20px;
+    text-align: center;
+}
+
+.map-placeholder {
+    width: 300px;
+    height: 200px;
+    background-color: beige;
+    color: darkpink;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid pink;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+}
