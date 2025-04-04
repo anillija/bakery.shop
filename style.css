@@ -271,17 +271,32 @@ body::after {
 }
 
 .bakery-header {
-    background-color: beige; /* Changed to beige */
-    color: darkpink; /* Changed to dark pink */
-    padding: 20px;
-    font-size: 2em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 3px solid beige; /* Beige border */
-    outline: 8px dashed pink; /* Updated to a dashed pink outline */
-    outline-offset: 5px; /* Added spacing between the border and outline */
-    border-radius: 10px; /* Rounded corners for both border and outline */
-    display: inline-block; /* Adjust width to fit the text */
-    margin: 20px auto; /* Center the header */
+    background-color: pink; /* Changed background to pink */
+    color: white; /* Changed text color to white for better contrast */
+    border-radius: 50px; /* Rounded corners for a cloud-like shape */
+    padding: 30px; /* Increased padding for a cloud effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    position: relative; /* For cloud-like circles */
+}
+
+.bakery-header::before,
+.bakery-header::after {
+    content: '';
+    position: absolute;
+    background-color: pink;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bakery-header::before {
+    left: -30px; /* Left circle for cloud effect */
+}
+
+.bakery-header::after {
+    right: -30px; /* Right circle for cloud effect */
 }
 
 .bakery-intro {
@@ -306,8 +321,11 @@ body::after {
 .product-list {
     list-style: none;
     padding: 0;
-    text-align: left; /* Align the list to the left */
-    margin-left: 20px; /* Add some left margin for spacing */
+    text-align: center; /* Center the list */
+    margin: 0 auto; /* Center horizontally */
+    font-family: 'Cursive', 'Comic Sans MS', sans-serif; /* Added fancy font */
+    font-size: 1.2em; /* Slightly increased font size for better readability */
+    font-weight: bold; /* Added bold styling */
 }
 
 .product-list li {
@@ -345,4 +363,31 @@ body::after {
     border-radius: 10px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+    position: relative; /* For positioning the decorative lines */
+}
+
+.map-placeholder::before,
+.map-placeholder::after {
+    content: '';
+    position: absolute;
+    background-color: pink;
+    border-radius: 5px;
+}
+
+.map-placeholder::before {
+    width: 80%;
+    height: 3px;
+    top: 20%;
+    left: 10%;
+    transform: rotate(15deg);
+    box-shadow: 0 0 5px rgba(255, 182, 193, 0.7);
+}
+
+.map-placeholder::after {
+    width: 60%;
+    height: 3px;
+    bottom: 20%;
+    right: 10%;
+    transform: rotate(-15deg);
+    box-shadow: 0 0 5px rgba(255, 182, 193, 0.7);
 }
