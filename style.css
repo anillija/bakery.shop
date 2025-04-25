@@ -1,393 +1,371 @@
 body {
-    background-color: lightpink; /* Changed to light pink */
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Prevent scrollbars due to animation */
+    background: radial-gradient(circle, #f8bbd0 0%, #fdfdfd 100%); /* Light pink aura effect */
+    color: #333;
+    line-height: 1.6;
+    border-top: 5px solid #f8bbd0; /* Pink border at the top */
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 135px;
-    background-color: transparent;
-    border: 3px solid darkpink;
-    border-radius: 50% 50% 0 0;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    animation: move-heart 5s infinite ease-in-out;
-    z-index: 0;
-    opacity: 0.3;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 10%);
-    background-size: 50px 50px;
-    animation: sparkle-animation 5s infinite linear;
-    z-index: 0;
-}
-
-.beige-heading {
-    color: beige;
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-    background-color: beige;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    box-shadow: 0 0 10px 5px rgba(255, 192, 203, 0.5), 0 0 20px 10px rgba(255, 182, 193, 0.7);
-}
-
-.pink-heading {
-    color: black; /* Changed text color to black */
+.logo {
     font-size: 1.8em;
-    text-align: center;
-    margin-bottom: 15px;
+    font-weight: bold;
+    color: #c2185b;
 }
 
-.pink-heart {
-    color: pink;
-    font-size: 1.5em;
-}
-
-.description {
-    text-align: center;
-    font-family: Arial, sans-serif;
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
     color: #333;
-    margin-top: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.glitter-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    width: fit-content;
-    text-align: left;
-    font-family: Arial, sans-serif;
-    font-size: 1.2em;
-    color: #333;
-    position: relative;
-    background: beige;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 5px rgba(255, 192, 203, 0.5), 0 0 20px 10px rgba(255, 182, 193, 0.7);
+.nav a:hover {
+    color: #c2185b;
 }
 
-.glitter-list li {
-    margin: 5px 0;
-}
-
-.dark-pink-text {
-    color: darkpink;
-    font-family: Arial, sans-serif;
+.hero {
     text-align: center;
-    margin-top: 20px;
-    line-height: 1.5;
+    padding: 100px 20px;
+    background-color: #f8f9fa;
 }
 
-.login-container {
-    background-color: beige;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px 5px rgba(255, 192, 203, 0.7);
-    text-align: center;
-    width: 300px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #c2185b;
+    font-family: 'Pacifico', cursive; /* Cuter font */
+    animation: float 3s ease-in-out infinite; /* Add floating animation */
 }
 
-.login-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 10%);
-    background-size: 50px 50px;
-    animation: sparkle 3s linear infinite;
-    z-index: 0;
-}
-
-@keyframes sparkle {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(50px, 50px);
-    }
-}
-
-@keyframes move-heart {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -150%) scale(2);
-        opacity: 0;
-    }
-}
-
-@keyframes sparkle-animation {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the original position */
     }
     50% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.5);
-        opacity: 0;
+        transform: translateY(-10px); /* Move up slightly */
     }
 }
 
-.moving-heart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 135px;
-    background-color: transparent;
-    border: 3px solid darkpink;
-    border-radius: 50% 50% 0 0;
-    transform: rotate(-45deg);
-    animation: move-heart 5s infinite ease-in-out;
-    z-index: 0;
-    opacity: 0.5;
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
-.moving-heart::before,
-.moving-heart::after {
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 135px;
-    background-color: transparent;
-    border: 3px solid darkpink;
-    border-radius: 50%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.moving-heart::after {
-    left: 0;
-    transform: translateX(0);
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.input-field {
-    padding: 10px;
-    border: 2px solid pink;
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c2185b;
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-}
-
-.input-field:focus {
-    outline: none;
-    border-color: hotpink;
-    box-shadow: 0 0 5px hotpink;
-}
-
-.login-button {
-    background-color: pink;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
-    background-color: hotpink;
+.cta-button:hover {
+    background-color: #a31545;
 }
 
-.heart-outline {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 90px;
-    background-color: transparent;
-    border: 3px solid darkpink;
-    border-radius: 50% 50% 0 0;
-    transform: translateX(-50%) rotate(-45deg);
-    z-index: 2;
+.cupcake-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c2185b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.heart-outline::before,
-.heart-outline::after {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 90px;
-    background-color: transparent;
-    border: 3px solid darkpink;
-    border-radius: 50%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+.cupcake-link:hover {
+    background-color: #a31545;
 }
 
-.heart-outline::after {
-    left: 0;
-    transform: translateX(0);
+.explore-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c2185b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.sparkle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    animation: sparkle-animation 3s infinite ease-in-out;
-    z-index: 0;
+.explore-button:hover {
+    background-color: #a31545;
 }
 
-.bakery-header {
-    background-color: pink; /* Changed background to pink */
-    color: white; /* Changed text color to white for better contrast */
-    border-radius: 50px; /* Rounded corners for a cloud-like shape */
-    padding: 30px; /* Increased padding for a cloud effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
-    position: relative; /* For cloud-like circles */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+    border: 5px solid #f8bbd0; /* Larger pink border */
+    border-radius: 10px; /* Rounded corners for the border */
+    margin: 20px auto; /* Center the section */
+    max-width: 1200px; /* Limit the width */
 }
 
-.bakery-header::before,
-.bakery-header::after {
-    content: '';
-    position: absolute;
-    background-color: pink;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    top: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.products h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-family: 'Pacifico', cursive; /* Cuter font */
+    color: #c2185b;
 }
 
-.bakery-header::before {
-    left: -30px; /* Left circle for cloud effect */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-.bakery-header::after {
-    right: -30px; /* Right circle for cloud effect */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bakery-intro {
-    margin: 20px;
-    font-size: 1.2em;
-    color: darkpink; /* Changed to dark pink */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.bakery-products {
-    margin: 20px;
-    border: 3px solid beige; /* Added beige border */
-    outline: 5px solid lightpink; /* Added light pink outline */
-    border-radius: 10px; /* Rounded corners for both border and outline */
-    padding: 15px; /* Added padding for spacing */
-}
-
-.bakery-products h2 {
-    color: darkpink; /* Changed to dark pink */
-    font-size: 1.8em;
-}
-
-.product-list {
-    list-style: none;
-    padding: 0;
-    text-align: center; /* Center the list */
-    margin: 0 auto; /* Center horizontally */
-    font-family: 'Cursive', 'Comic Sans MS', sans-serif; /* Added fancy font */
-    font-size: 1.2em; /* Slightly increased font size for better readability */
-    font-weight: bold; /* Added bold styling */
-}
-
-.product-list li {
-    margin: 10px 0;
-    font-size: 1em;
-    color: beige; /* Changed to beige */
-}
-
-.bakery-footer {
-    background-color: beige; /* Changed to beige */
-    color: darkpink; /* Changed to dark pink */
-    padding: 10px;
-    font-size: 0.9em;
-    position: fixed;
-    bottom: 0;
+.product-card img {
     width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the reserved space */
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.bakery-map {
-    margin: 20px;
+.product-card h3 {
+    font-size: 1.2em;
+    color: #c2185b;
+}
+
+.about, .contact {
+    padding: 50px 20px;
     text-align: center;
 }
 
-.map-placeholder {
-    width: 300px;
-    height: 200px;
-    background-color: beige;
-    color: darkpink;
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid pink;
+.about {
+    border: 5px solid #f8bbd0; /* Larger pink border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.about h2, .contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact p:nth-child(4) {
+    display: inline-block;
+    animation: buzz 0.2s linear infinite;
+}
+
+@keyframes buzz {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+}
+
+.about-us {
+    display: none; /* Initially hidden */
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #333;
     border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.about-us h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #c2185b;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.instagram {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+
+.instagram h2 {
+    font-size: 2em;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.instagram p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.locations {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 5px solid #f8bbd0; /* Larger pink border */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.locations h2 {
+    font-size: 2em;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.locations ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.locations li {
+    margin: 10px 0;
+}
+
+.locations li:last-child {
+    font-weight: bold;
+    color: #f8bbd0; /* Light pink color */
+    animation: sparkle 2s infinite, light-pink-shine 2s infinite;
+}
+
+@keyframes light-pink-shine {
+    0% {
+        text-shadow: 0 0 5px #f8bbd0, 0 0 10px #f8bbd0, 0 0 20px #f8bbd0;
+    }
+    50% {
+        text-shadow: 0 0 10px #f8bbd0, 0 0 20px #f8bbd0, 0 0 30px #f8bbd0;
+    }
+    100% {
+        text-shadow: 0 0 5px #f8bbd0, 0 0 10px #f8bbd0, 0 0 20px #f8bbd0;
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #f8bbd0;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f8bbd0;
+    }
+}
+
+.phone-animation {
+    display: inline-block;
+    animation: subtle-buzz 1s linear infinite;
+}
+
+@keyframes subtle-buzz {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+}
+
+.path-animation {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    border: 5px solid #f8bbd0; /* Larger pink border */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.path-animation h2 {
+    font-size: 2em;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.path-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
     margin: 0 auto;
-    box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
-    position: relative; /* For positioning the decorative lines */
+    overflow: hidden;
 }
 
-.map-placeholder::before,
-.map-placeholder::after {
-    content: '';
+.path {
     position: absolute;
-    background-color: pink;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: transparent;
+    border: 2px dashed #c2185b;
+    border-radius: 50%; /* Make the path curved */
+    transform: translateY(-50%);
+    animation: move-path 5s linear infinite;
+}
+
+.car {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30px;
+    height: 20px;
+    background-color: #333;
     border-radius: 5px;
+    transform: translateY(-50%);
+    animation: drive-along-path 5s linear infinite;
 }
 
-.map-placeholder::before {
-    width: 80%;
-    height: 3px;
-    top: 20%;
-    left: 10%;
-    transform: rotate(15deg);
-    box-shadow: 0 0 5px rgba(255, 182, 193, 0.7);
+@keyframes drive-along-path {
+    0% {
+        transform: translate(0, -50%);
+    }
+    50% {
+        transform: translate(50%, -60%);
+    }
+    100% {
+        transform: translate(100%, -50%);
+    }
 }
 
-.map-placeholder::after {
-    width: 60%;
-    height: 3px;
-    bottom: 20%;
-    right: 10%;
-    transform: rotate(-15deg);
-    box-shadow: 0 0 5px rgba(255, 182, 193, 0.7);
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #666;
+    font-size: 0.9em;
 }
